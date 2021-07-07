@@ -1,1 +1,37 @@
-<h1>Make your form here</h1>
+<%# Make a nested form (this should probably have html <label>s so it makes sense to a user). This form will be creating three objects (one instance of the Pirate class, and two instances of the Ship class). Remember, you'll need to build a corresponding controller action to load this page. Your form should POST to the route '/pirates'. %>
+<%# pirate(name, weight, height) %>
+<%# ship(name, type, booty) %>
+
+<h1>New Pirates Sign up Here</h1>
+
+<form action="/pirates" method="POST">
+<%# Create pirate instance %>
+    <h2>Pirate Info:</h2>
+
+    <label for="pirate-name">Name: </label>
+    <input type="text" name="pirate[name]" id="pirate-name"></br>
+    <label for="pirate-weight">Weight: </label>
+    <input type="text" name="pirate[weight]" id="pirate-weight"></br>
+    <label for="pirate-height">Height: </label>
+    <input type="text" name="pirate[height]" id="pirate-height"></br>
+
+    <h2>Ship #1:</h2>
+
+    <label for="ship_name_1">Name: </label>
+    <input type="text" name="pirate[ships][][name]" id="ship_name_1"></br>
+    <label for="ship_type_1">Type: </label>
+    <input type="text" name="pirate[ships][][type]" id="ship_type_1"></br>
+    <label for="ship_booty_1">Booty: </label>
+    <input type="text" name="pirate[ships][][booty]" id="ship_booty_1"></br>
+
+    <h2>Ship #2:</h2>
+
+    <label for="ship_name_2">Name: </label>
+    <input type="text" name="pirate[ships][][name]" id="ship_name_2"></br>
+    <label for="ship_type_2">Type: </label>
+    <input type="text" name="pirate[ships][][type]" id="ship_type_2"></br>
+    <label for="ship_booty_2">Booty: </label>
+    <input type="text" name="pirate[ships][][booty]" id="ship_booty_2"></br>
+
+    <input type="submit" value="Submit">
+</form>
